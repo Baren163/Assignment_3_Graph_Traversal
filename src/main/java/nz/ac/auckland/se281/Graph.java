@@ -20,5 +20,38 @@ public class Graph {
   public Map<Node,List<Node>> getMap() {
     return this.nodeMap;
   }
-  
+
+  public void showInfo() throws InvalidCountryException {
+    
+    Node country = null;
+
+    while (country == null) {
+      
+    
+
+    MessageCli.INSERT_COUNTRY.printMessage();
+
+    String input = Utils.scanner.nextLine();
+
+    // COUNTRY_INFO("%s => continent: %s, tax fees: %s")
+
+    for (Map.Entry<Node, List<Node>> entry : this.getMap().entrySet()) {
+
+      if (entry.getKey().getName().equals(input)) {
+        country = entry.getKey();
+        break;
+      }
+      
+    }
+
+    if (country == null) {
+      throw new InvalidCountryException(input);
+    }
+
+    }
+    
+    MessageCli.COUNTRY_INFO.printMessage(country.getName(), country.getContinent(), String.valueOf(country.getTax()));
+
+  }
+
 }

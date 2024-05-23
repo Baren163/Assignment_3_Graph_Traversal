@@ -68,29 +68,43 @@ public class MapEngine {
 
     Node country = null;
 
-    MessageCli.INSERT_COUNTRY.printMessage();
+    while (country == null) {
+    
+      try {
 
-    String input = Utils.scanner.nextLine();
-
-    // COUNTRY_INFO("%s => continent: %s, tax fees: %s")
-
-    for (Map.Entry<Node, List<Node>> entry : riskGraph.getMap().entrySet()) {
-
-      if (entry.getKey().getName().equals(input)) {
-        country = entry.getKey();
-        break;
-      }
+    
       
-    }
+    
 
-    if (country == null) {
-      MessageCli.INVALID_COUNTRY.printMessage();
-      return;
+      MessageCli.INSERT_COUNTRY.printMessage();
+
+      String input = Utils.scanner.nextLine();
+
+      input = Utils.capitalizeFirstLetterOfEachWord(input);
+
+      for (Map.Entry<Node, List<Node>> entry : riskGraph.getMap().entrySet()) {
+
+        if (entry.getKey().getName().equals(input)) {
+          country = entry.getKey();
+          break;
+        }
+        
+      }
+
+      if (country == null) {
+        throw new InvalidCountryException(input);
+      }
+
+      
+      } catch (InvalidCountryException e) {
+        System.out.println(e.getMessage());
+      }
     }
 
     MessageCli.COUNTRY_INFO.printMessage(country.getName(), country.getContinent(), String.valueOf(country.getTax()));
 
   }
+
 
   /** this method is invoked when the user run the command route. */
   public void showRoute() {}
