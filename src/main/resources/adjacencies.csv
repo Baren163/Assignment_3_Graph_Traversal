@@ -1,0 +1,42 @@
+Afghanistan,Ukraine,Ural,China,India,Middle East
+Alaska,Alberta,Northwest Territory,Kamchatka
+Alberta,Alaska,Northwest Territory,Ontario,Western United States
+Argentina,Peru,Brazil
+Brazil,Venezuela,North Africa,Argentina,Peru
+Central America,Western United States,Venezuela,Eastern United States
+China,Afghanistan,Ural,Siberia,Mongolia,Siam,India
+Congo,North Africa,East Africa,South Africa
+East Africa,Egypt,Madagascar,South Africa,Congo,Middle East,North Africa
+Eastern Australia,New Guinea,Western Australia
+Eastern United States,Western United States,Ontario,Quebec,Central America
+Egypt,Southern Europe,Middle East,East Africa,North Africa
+Great Britain,Iceland,Scandinavia,Northern Europe,Western Europe
+Greenland,Northwest Territory,Ontario,Quebec,Iceland
+Iceland,Greenland,Great Britain,Scandinavia
+India,Middle East,Afghanistan,China,Siam
+Indonesia,Siam,New Guinea,Western Australia
+Irkutsk,Siberia,Yakutsk,Kamchatka,Mongolia
+Japan,Kamchatka,Mongolia
+Kamchatka,Yakutsk,Alaska,Japan,Mongolia,Irkutsk
+Madagascar,East Africa,South Africa
+Middle East,Ukraine,Afghanistan,India,Egypt,East Africa,Southern Europe
+Mongolia,Siberia,Irkutsk,Kamchatka,Japan,China
+New Guinea,Indonesia,Eastern Australia,Western Australia
+North Africa,Western Europe,Southern Europe,Egypt,Congo,Brazil,East Africa
+Northern Europe,Great Britain,Ukraine,Southern Europe,Western Europe,Scandinavia
+Northwest Territory,Alaska,Greenland,Ontario,Alberta
+Ontario,Northwest Territory,Greenland,Quebec,Eastern United States,Western United States,Alberta
+Peru,Brazil,Argentina,Venezuela
+Quebec,Ontario,Greenland,Eastern United States
+Scandinavia,Great Britain,Ukraine,Northern Europe,Iceland
+Siam,India,China,Indonesia
+Siberia,Ural,Yakutsk,Irkutsk,Mongolia,China
+South Africa,Congo,East Africa,Madagascar
+Southern Europe,Western Europe,Northern Europe,Ukraine,Egypt,North Africa,Middle East
+Ukraine,Scandinavia,Ural,Afghanistan,Middle East,Southern Europe,Northern Europe
+Ural,Ukraine,Siberia,Afghanistan,China
+Venezuela,Central America,Brazil,Peru
+Western Australia,Indonesia,New Guinea,Eastern Australia
+Western Europe,Great Britain,Northern Europe,Southern Europe,North Africa
+Western United States,Alberta,Ontario,Eastern United States,Central America
+Yakutsk,Siberia,Kamchatka,Irkutsk
