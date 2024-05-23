@@ -1,14 +1,17 @@
 package nz.ac.auckland.se281;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
+
 /** This class is the main entry point. */
 public class MapEngine {
+
+  Graph riskGraph = new Graph();
 
   public MapEngine() {
     // add other code here if you want
@@ -23,9 +26,6 @@ public class MapEngine {
     Set<Node> countryNodes = new HashSet<>();
 
     Queue<Node> nodeQueue = new LinkedList<>();
-
-    // add code here to create your data structures
-    Graph riskGraph = new Graph();
 
     Node nodeToAdd;
 
@@ -65,7 +65,31 @@ public class MapEngine {
 
   /** this method is invoked when the user run the command info-country. */
   public void showInfoCountry() {
-    // add code here
+
+    Node country = null;
+
+    MessageCli.INSERT_COUNTRY.printMessage();
+
+    String input = Utils.scanner.nextLine();
+
+    // COUNTRY_INFO("%s => continent: %s, tax fees: %s")
+
+    for (Map.Entry<Node, List<Node>> entry : riskGraph.getMap().entrySet()) {
+
+      if (entry.getKey().getName().equals(input)) {
+        country = entry.getKey();
+        break;
+      }
+      
+    }
+
+    if (country == null) {
+      MessageCli.INVALID_COUNTRY.printMessage();
+      return;
+    }
+
+    MessageCli.COUNTRY_INFO.printMessage(country.getName(), country.getContinent(), String.valueOf(country.getTax()));
+
   }
 
   /** this method is invoked when the user run the command route. */

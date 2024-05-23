@@ -17,4 +17,8 @@ public class Graph {
     nodeMap.putIfAbsent(country, adjCountries);
   }
 
+  public Map<Node,List<Node>> getMap() {
+    return this.nodeMap;
+  }
+  
 }

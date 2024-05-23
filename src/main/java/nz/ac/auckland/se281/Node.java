@@ -27,11 +27,20 @@ public class Node {
     if (this.countryName.equals(otherNode.getName())) {
       return true;
     }
-    
+
     return false;
   }
  
   public String getName() {
     return this.countryName;
   }
+  
+  public int getTax() {
+    return this.tax;
+  }
+
+  public String getContinent() {
+    return this.continent;
+  }
+
 }
