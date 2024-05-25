@@ -1,7 +1,6 @@
 package nz.ac.auckland.se281;
 
-import java.util.Collection;
-import java.util.Collections;
+
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -107,7 +106,7 @@ public class MapEngine {
   /** this method is invoked when the user run the command route. */
   public void showRoute() {
 
-    List<Node> route;
+
 
     Node countrySource = null;
 
@@ -178,11 +177,9 @@ public class MapEngine {
     }
 
 
-    route = riskGraph.breathFirstTraversal(countrySource, countryDestination);
+    riskGraph.breathFirstTraversal(countrySource, countryDestination);
 
-    Collections.reverse(route);
 
-    MessageCli.ROUTE_INFO.printMessage(String.valueOf(route));
 
 
 

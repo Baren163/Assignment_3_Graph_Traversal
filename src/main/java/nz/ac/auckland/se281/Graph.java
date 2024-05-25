@@ -1,6 +1,7 @@
 
 package nz.ac.auckland.se281;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.Queue;
 import java.util.List;
@@ -64,6 +65,8 @@ public class Graph {
     
     Map<Node,Node> mapPath = new HashMap<>();
 
+    LinkedList<String> continentsVisited = new LinkedList<>();
+
     queue.add(root);
     visited.add(root);
 
@@ -96,7 +99,21 @@ public class Graph {
               thePath.add(parentOf);
               n = parentOf;
               parentOf = mapPath.get(n);
+
+              if (!continentsVisited.contains(n.getContinent())) {
+              continentsVisited.add(n.getContinent());
+              }
+
             }
+
+            List<Node> route = thePath;
+
+            Collections.reverse(route);
+            Collections.reverse(continentsVisited);
+
+            MessageCli.ROUTE_INFO.printMessage(String.valueOf(route));
+            MessageCli.CONTINENT_INFO.printMessage(String.valueOf(continentsVisited));
+
             return thePath;
 
           }
