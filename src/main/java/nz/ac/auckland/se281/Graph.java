@@ -67,6 +67,8 @@ public class Graph {
 
     LinkedList<String> continentsVisited = new LinkedList<>();
 
+    int tax = 0;
+
     queue.add(root);
     visited.add(root);
 
@@ -92,18 +94,25 @@ public class Graph {
             List<Node> thePath = new ArrayList<>();
 
             thePath.add(n);
+            continentsVisited.add(n.getContinent());
 
             Node parentOf = mapPath.get(n);
 
             while (parentOf != null) {
-              thePath.add(parentOf);
-              n = parentOf;
-              parentOf = mapPath.get(n);
 
+              thePath.add(parentOf);
+
+
+              tax += n.getTax();
+
+              n = parentOf;
+              
               if (!continentsVisited.contains(n.getContinent())) {
               continentsVisited.add(n.getContinent());
               }
 
+
+              parentOf = mapPath.get(n);
             }
 
             List<Node> route = thePath;
@@ -113,6 +122,7 @@ public class Graph {
 
             MessageCli.ROUTE_INFO.printMessage(String.valueOf(route));
             MessageCli.CONTINENT_INFO.printMessage(String.valueOf(continentsVisited));
+            MessageCli.TAX_INFO.printMessage(String.valueOf(tax));
 
             return thePath;
 
