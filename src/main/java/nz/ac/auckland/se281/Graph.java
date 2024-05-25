@@ -2,8 +2,11 @@
 package nz.ac.auckland.se281;
 
 import java.util.Map;
+import java.util.Queue;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Graph {
 
@@ -52,6 +55,55 @@ public class Graph {
     
     MessageCli.COUNTRY_INFO.printMessage(country.getName(), country.getContinent(), String.valueOf(country.getTax()));
 
+  }
+
+  public List<Node> breathFirstTraversal(Node root, Node destination) {
+
+    List<Node> visited = new ArrayList<>();
+    Queue<Node> queue = new LinkedList<>();
+    
+    Map<Node,Node> mapPath = new HashMap<>();
+
+    queue.add(root);
+    visited.add(root);
+
+    mapPath.put(root, null);
+
+      while (!queue.isEmpty()) {
+
+        Node node = queue.poll();
+
+        for (Node n : this.nodeMap.get(node)) {
+
+          if (!visited.contains(n)) {
+
+            visited.add(n);
+            queue.add(n);
+
+            mapPath.put(n, node);
+            
+          }
+
+          if (n.equals(destination)) {
+            // Path detected, reconstruct the path
+            List<Node> thePath = new ArrayList<>();
+
+            thePath.add(n);
+
+            Node parentOf = mapPath.get(n);
+
+            while (parentOf != null) {
+              thePath.add(parentOf);
+              n = parentOf;
+              parentOf = mapPath.get(n);
+            }
+            return thePath;
+
+          }
+        }
+      }
+      
+    return visited;
   }
 
 }

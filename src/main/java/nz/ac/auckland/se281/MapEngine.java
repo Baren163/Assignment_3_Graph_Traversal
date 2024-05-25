@@ -104,7 +104,9 @@ public class MapEngine {
 
   /** this method is invoked when the user run the command route. */
   public void showRoute() {
-    
+
+    List<Node> route;
+
     Node countrySource = null;
 
     while (countrySource == null) {
@@ -167,6 +169,16 @@ public class MapEngine {
         System.out.println(e.getMessage());
       }
     }
+
+    if (countrySource.equals(countryDestination)) {
+      MessageCli.NO_CROSSBORDER_TRAVEL.printMessage();
+    }
+
+
+    route = riskGraph.breathFirstTraversal(countrySource, countryDestination);
+
+
+
 
 
   }
