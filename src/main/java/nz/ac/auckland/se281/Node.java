@@ -30,6 +30,11 @@ public class Node {
 
     return false;
   }
+
+  @Override
+  public String toString() {
+    return this.getName();
+  }
  
   public String getName() {
     return this.countryName;

@@ -1,5 +1,7 @@
 package nz.ac.auckland.se281;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -172,12 +174,15 @@ public class MapEngine {
 
     if (countrySource.equals(countryDestination)) {
       MessageCli.NO_CROSSBORDER_TRAVEL.printMessage();
+      return;
     }
 
 
     route = riskGraph.breathFirstTraversal(countrySource, countryDestination);
 
+    Collections.reverse(route);
 
+    MessageCli.ROUTE_INFO.printMessage(String.valueOf(route));
 
 
 
