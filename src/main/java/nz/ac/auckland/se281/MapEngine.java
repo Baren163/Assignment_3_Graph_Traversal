@@ -72,10 +72,6 @@ public class MapEngine {
     
       try {
 
-    
-      
-    
-
       MessageCli.INSERT_COUNTRY.printMessage();
 
       String input = Utils.scanner.nextLine();
@@ -107,5 +103,71 @@ public class MapEngine {
 
 
   /** this method is invoked when the user run the command route. */
-  public void showRoute() {}
+  public void showRoute() {
+    
+    Node countrySource = null;
+
+    while (countrySource == null) {
+    
+      try {
+
+      MessageCli.INSERT_SOURCE.printMessage();
+
+      String input = Utils.scanner.nextLine();
+
+      input = Utils.capitalizeFirstLetterOfEachWord(input);
+
+      for (Map.Entry<Node, List<Node>> entry : riskGraph.getMap().entrySet()) {
+
+        if (entry.getKey().getName().equals(input)) {
+          countrySource = entry.getKey();
+          break;
+        }
+        
+      }
+
+      if (countrySource == null) {
+        throw new InvalidCountryException(input);
+      }
+
+      
+      } catch (InvalidCountryException e) {
+        System.out.println(e.getMessage());
+      }
+    }
+
+
+    Node countryDestination = null;
+
+    while (countryDestination == null) {
+    
+      try {
+
+      MessageCli.INSERT_DESTINATION.printMessage();
+
+      String input = Utils.scanner.nextLine();
+
+      input = Utils.capitalizeFirstLetterOfEachWord(input);
+
+      for (Map.Entry<Node, List<Node>> entry : riskGraph.getMap().entrySet()) {
+
+        if (entry.getKey().getName().equals(input)) {
+          countryDestination = entry.getKey();
+          break;
+        }
+        
+      }
+
+      if (countryDestination == null) {
+        throw new InvalidCountryException(input);
+      }
+
+      
+      } catch (InvalidCountryException e) {
+        System.out.println(e.getMessage());
+      }
+    }
+
+
+  }
 }
