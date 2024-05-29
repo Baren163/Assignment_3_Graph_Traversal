@@ -10,7 +10,7 @@ import java.util.Set;
 /** This class is the main entry point. */
 public class MapEngine {
 
-  Graph riskGraph = new Graph();
+  private Graph riskGraph = new Graph();
 
   public MapEngine() {
     // add other code here if you want
