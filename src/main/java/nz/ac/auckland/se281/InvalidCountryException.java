@@ -10,6 +10,4 @@ public class InvalidCountryException extends Exception {
   public String toString() {
     return getMessage();
   }
-
-
 }

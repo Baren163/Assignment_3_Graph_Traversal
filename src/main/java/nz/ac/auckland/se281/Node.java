@@ -35,11 +35,11 @@ public class Node {
   public String toString() {
     return this.getName();
   }
- 
+
   public String getName() {
     return this.countryName;
   }
-  
+
   public int getTax() {
     return this.tax;
   }
@@ -47,5 +47,4 @@ public class Node {
   public String getContinent() {
     return this.continent;
   }
-
 }
