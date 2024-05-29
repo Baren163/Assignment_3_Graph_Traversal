@@ -159,6 +159,6 @@ public class MapEngine {
       return;
     }
 
-    riskGraph.breathFirstTraversal(countrySource, countryDestination);
+    riskGraph.findRoute(countrySource, countryDestination);
   }
 }

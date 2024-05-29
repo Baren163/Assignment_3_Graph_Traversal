@@ -53,7 +53,7 @@ public class Graph {
         country.getName(), country.getContinent(), String.valueOf(country.getTax()));
   }
 
-  public List<Node> breathFirstTraversal(Node root, Node destination) {
+  public List<Node> findRoute(Node root, Node destination) {
 
     List<Node> visited = new ArrayList<>();
     Queue<Node> queue = new LinkedList<>();
