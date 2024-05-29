@@ -55,6 +55,8 @@ public class Graph {
 
   public List<Node> findRoute(Node root, Node destination) {
 
+    // Declaring the variables and data structures
+
     List<Node> visited = new ArrayList<>();
     Queue<Node> queue = new LinkedList<>();
 
@@ -69,6 +71,8 @@ public class Graph {
 
     mapPath.put(root, null);
 
+    // Iterating through the queue of adjacent nodes to extract
+    // information about the edges and adjacenies
     while (!queue.isEmpty()) {
 
       Node node = queue.poll();
@@ -84,6 +88,7 @@ public class Graph {
         }
 
         if (n.equals(destination)) {
+
           // Path detected, reconstruct the path
           List<Node> thePath = new ArrayList<>();
 
@@ -92,6 +97,7 @@ public class Graph {
 
           Node parentOf = mapPath.get(n);
 
+          // Checks if we are at the starting position yet
           while (parentOf != null) {
 
             thePath.add(parentOf);

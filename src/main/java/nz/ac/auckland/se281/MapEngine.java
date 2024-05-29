@@ -19,6 +19,8 @@ public class MapEngine {
 
   /** invoked one time only when constracting the MapEngine class. */
   private void loadMap() {
+
+    // Declaring the variables and data structures
     List<String> countries = Utils.readCountries();
     List<String> adjacencies = Utils.readAdjacencies();
 
@@ -28,6 +30,8 @@ public class MapEngine {
 
     Node nodeToAdd;
 
+    // Going through the countries list and splitting it up at the
+    // commas so that get the correct information like tax, name and continent
     for (int i = 0; i < countries.size(); i++) {
 
       String[] countryParts = countries.get(i).split(",");
@@ -37,6 +41,8 @@ public class MapEngine {
       nodeQueue.add(nodeToAdd);
     }
 
+    // Iterating through the adjancies list and splitting each string at the comma
+    // so that I can get individual countries
     for (int i = 0; i < adjacencies.size(); i++) {
 
       LinkedList<Node> tempList = new LinkedList<>();

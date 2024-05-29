@@ -14,6 +14,8 @@ public class Node {
 
   @Override
   public boolean equals(Object other) {
+    // Overriding the equals function for the node so that I can easily
+    // compare nodes properly
     if (this == other) {
       return true;
     }
